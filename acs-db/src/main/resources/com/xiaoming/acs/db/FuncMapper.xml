@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoming.acs.db.mapper.FuncMapper">
+
+    <resultMap id="BaseResultMap" type="com.xiaoming.acs.db.entity.Func">
+        <result column="func_id" property="funcId"/>
+        <result column="en_name" property="enName"/>
+        <result column="cn_name" property="cnName"/>
+        <result column="parent_func_id" property="parentFuncId"/>
+        <result column="prod_id" property="prodId"/>
+        <result column="res_content" property="resContent"/>
+        <result column="desc" property="desc"/>
+        <result column="parent_path" property="parentPath"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        func_id,
+        en_name,
+        cn_name,
+        parent_func_id,
+        prod_id,
+        res_content,
+        `desc`,
+        parent_path,
+        create_time,
+        update_time
+    </sql>
+
+</mapper>

@@ -36,7 +36,6 @@ public class UserController {
 
     @PostMapping()
     public Result<Void> addUser(@RequestBody UserVo userVo) {
-        Assert.notNull(userVo);
         Assert.notNull(userVo.getLoginId());
         Assert.notNull(userVo.getLoginType());
         User user = UserConverter.convertFromVo2User(userVo);
@@ -54,7 +53,6 @@ public class UserController {
 
     @PutMapping()
     public Result<Void> updateUser(@RequestBody UserVo userVo) {
-        Assert.notNull(userVo);
         Assert.notNull(userVo.getLoginId());
         Assert.notNull(userVo.getLoginType());
         User user = UserConverter.convertFromVo2User(userVo);
@@ -67,8 +65,6 @@ public class UserController {
     @GetMapping("/{loginType}/{loginId}")
     public Result<UserVo> findUser(@PathVariable("loginType") Integer loginType,
                                    @PathVariable("loginId") Long loginId) {
-        Assert.notNull(loginType);
-        Assert.notNull(loginId);
         User user = userService.queryByProdIdAndLoginIdAndLoginType(CurrentAccessInfo.getProdId(), loginId, loginType);
         return Result.ok(UserConverter.convertFromUser2Vo(user));
     }

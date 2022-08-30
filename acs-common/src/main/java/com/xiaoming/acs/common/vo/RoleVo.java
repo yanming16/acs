@@ -1,11 +1,4 @@
-package com.xiaoming.acs.db.entity;
-
-import java.io.Serializable;
-import java.util.Date;
-
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+package com.xiaoming.acs.common.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,23 +6,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @author xiaoming
- * @description 角色表
- * @date 2022-08-24
+ * @author yanming03
+ * @version 1.0
+ * @date 2022/8/30 18:53
+ * @description
  */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@TableName(value = "role")
-public class Role implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class RoleVo {
 
     /**
      * 该角色的id
      */
-    @TableId(type = IdType.AUTO)
     private Long roleId;
 
     /**
@@ -55,11 +45,10 @@ public class Role implements Serializable {
     /**
      * 创建时间
      */
-    private Date createTime;
+    private Long createTime;
 
     /**
      * 更新时间
      */
-    private Date updateTime;
-
+    private Long updateTime;
 }

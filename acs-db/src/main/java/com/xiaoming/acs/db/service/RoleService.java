@@ -10,4 +10,15 @@ import com.xiaoming.acs.db.entity.Role;
  * @description
  */
 public interface RoleService extends IService<Role> {
+
+    /**
+     * 根据 产品线 和 英文名称查询角色信息
+     *
+     * @param prodId 产品线 id
+     * @param enName 英文名称
+     *
+     * @return 角色信息
+     */
+    Role queryByProdIdAndEnName(long prodId, String enName);
+
 }

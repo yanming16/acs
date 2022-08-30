@@ -33,6 +33,8 @@ public interface UserService extends IService<User> {
 
     /**
      * 根据 产品线 登录id 和 登录方式 更新用户信息
+     *
+     * @param user 更新的用户信息
      */
     void updateByProdIdAndLoginIdAndLoginType(User user);
 

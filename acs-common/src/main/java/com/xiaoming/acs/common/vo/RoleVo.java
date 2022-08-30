@@ -33,11 +33,6 @@ public class RoleVo {
     private String cnName;
 
     /**
-     * 该角色所属的产品线id
-     */
-    private Long prodId;
-
-    /**
      * 该角色的描述
      */
     private String desc;

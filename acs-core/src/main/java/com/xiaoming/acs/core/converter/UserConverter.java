@@ -20,7 +20,6 @@ public class UserConverter {
         }
         return UserVo.builder()
                 .userId(user.getUserId())
-                .prodId(user.getProdId())
                 .loginId(user.getLoginId())
                 .loginType(user.getLoginType())
                 .loginName(user.getLoginName())
@@ -42,7 +41,6 @@ public class UserConverter {
         }
         return User.builder()
                 .userId(userVo.getUserId())
-                .prodId(userVo.getProdId())
                 .loginId(userVo.getLoginId())
                 .loginType(userVo.getLoginType())
                 .loginName(userVo.getLoginName())

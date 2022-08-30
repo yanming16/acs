@@ -21,7 +21,6 @@ public class RoleConverter {
 
         return RoleVo.builder()
                 .roleId(role.getRoleId())
-                .prodId(role.getProdId())
                 .cnName(role.getCnName())
                 .enName(role.getEnName())
                 .desc(role.getDesc())
@@ -37,7 +36,6 @@ public class RoleConverter {
 
         return Role.builder()
                 .roleId(roleVo.getRoleId())
-                .prodId(roleVo.getProdId())
                 .cnName(roleVo.getCnName())
                 .enName(roleVo.getEnName())
                 .desc(roleVo.getDesc())

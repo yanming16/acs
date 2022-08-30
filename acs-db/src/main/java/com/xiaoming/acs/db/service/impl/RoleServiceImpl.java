@@ -3,6 +3,7 @@ package com.xiaoming.acs.db.service.impl;
 import org.springframework.stereotype.Service;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xiaoming.acs.db.entity.Role;
 import com.xiaoming.acs.db.mapper.RoleMapper;
@@ -19,6 +20,22 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Service
 public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role>  implements RoleService {
+
+    @Override
+    public void deleteByProdIdAndEnName(long prodId, String enName) {
+        LambdaQueryWrapper<Role> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(Role::getRoleId, prodId);
+        queryWrapper.eq(Role::getEnName, enName);
+        remove(queryWrapper);
+    }
+
+    @Override
+    public void updateByProdIdAndEnName(Role role) {
+        LambdaUpdateWrapper<Role> updateWrapper = new LambdaUpdateWrapper<>();
+        updateWrapper.eq(Role::getProdId, role.getProdId());
+        updateWrapper.eq(Role::getEnName, role.getEnName());
+        update(role, updateWrapper);
+    }
 
     @Override
     public Role queryByProdIdAndEnName(long prodId, String enName) {

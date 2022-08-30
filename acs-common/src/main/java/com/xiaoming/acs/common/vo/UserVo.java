@@ -23,11 +23,6 @@ public class UserVo {
     private Long userId;
 
     /**
-     * 可访问产品线id
-     */
-    private Long prodId;
-
-    /**
      * 该用户登录类型
      */
     private Integer loginType;

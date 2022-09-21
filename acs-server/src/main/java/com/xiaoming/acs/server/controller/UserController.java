@@ -34,7 +34,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping()
+    @PostMapping
     public Result<Void> addUser(@RequestBody UserVo userVo) {
         Assert.notNull(userVo.getLoginId());
         Assert.notNull(userVo.getLoginType());
@@ -51,7 +51,7 @@ public class UserController {
         return Result.ok();
     }
 
-    @PutMapping()
+    @PutMapping
     public Result<Void> updateUser(@RequestBody UserVo userVo) {
         Assert.notNull(userVo.getLoginId());
         Assert.notNull(userVo.getLoginType());

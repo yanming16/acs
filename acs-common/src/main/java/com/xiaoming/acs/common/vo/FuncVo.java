@@ -1,11 +1,4 @@
-package com.xiaoming.acs.db.entity;
-
-import java.io.Serializable;
-import java.util.Date;
-
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+package com.xiaoming.acs.common.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,23 +6,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @author xiaoming
- * @description 功能
- * @date 2022-08-24
+ * @author yanming03
+ * @version 1.0
+ * @date 2022/9/21 15:09
+ * @description
  */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@TableName(value = "func")
-public class Func implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class FuncVo {
 
     /**
      * 该功能的id
      */
-    @TableId(type = IdType.AUTO)
     private Long funcId;
 
     /**
@@ -46,11 +36,6 @@ public class Func implements Serializable {
      * 父功能的id
      */
     private Long parentFuncId;
-
-    /**
-     * 该功能所属的产品线n
-     */
-    private Long prodId;
 
     /**
      * 该功能的资源内容
@@ -70,11 +55,10 @@ public class Func implements Serializable {
     /**
      * 创建时间
      */
-    private Date createTime;
+    private Long createTime;
 
     /**
      * 更新时间
      */
-    private Date updateTime;
-
+    private Long updateTime;
 }
